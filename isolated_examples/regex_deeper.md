@@ -45,6 +45,8 @@ ${{\color{BrickRed}\texttt{ \*g\*.h \quad}}}$
 ${{\color{BrickRed}\texttt{ \quad /dev/null }}}$
 
 <br/>
+<hr/>
+<br/>
 
 Stuff from my other efforts:
 
@@ -89,3 +91,23 @@ ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 $ echo "1025+1025+274" | bc -l
 2324
 ```
+
+<br/>
+<hr/>
+<br/>
+
+```bash
+find . -type f -iname "*.png" |
+  xargs -I{} -0 bash -c '
+    orig={};
+```
+`      new_fname=$(echo "${orig}" |` ${{\color{Cerulean}\small{\texttt{ \quad awk \quad }}}}$ <kbd>-</kbd> ${{\color{Cerulean}\small{\texttt{ F \quad }}}}$ <kbd>'"'"'</kbd> <kbd>.</kbd> <kbd>'"'"'</kbd> ${{\color{Cerulean}\small{\texttt{ \quad \quad }}}}$ <kbd>'"'"'</kbd> <kbd>{</kbd> ${{\color{Cerulean}\small{\texttt{ print }}}}$ <kbd>$</kbd> ${{\color{Cerulean}\small{\texttt{ 1 \quad}}}}$ <kbd>"</kbd> <kbd>_</kbd> ${{\color{Cerulean}\small{\texttt{ 001 }}}}$ <kbd>"</kbd> ${{\color{Cerulean}\small{\texttt{ \quad}}}}$ <kbd>$</kbd> ${{\color{Cerulean}\small{\texttt{ 2 \quad}}}}$ <kbd>}</kbd> <kbd>'"'"'</kbd> `;`
+```bash
+    echo "  Renaming ${orig} to ${new_fname}";
+    echo "       ...";
+    mv "${orig}" "${new_fname}" && echo "           ... success" || echo "           ... FAILURE";
+    echo
+  ' 2>&1 | tee outfile_$(date +'%s_%Y-%m-%dT%H%M%S%z').out
+```
+
+`$ ` 
