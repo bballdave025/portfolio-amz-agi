@@ -124,3 +124,43 @@ EOF
 
 <br/><hr/><br/>
 
+```bash
+$ find . -type f -iname "*.png" |
+    xargs -I{} -0 bash -c '
+      orig={};
+      new_fname=$(echo "${orig}" |
+```
+
+`            `<kbd>awk -F '"'"'.'"'"' '"'"'{print $1 "_001." $2}'"'"'</kbd> `);`
+
+```bash
+      echo "  Renaming ${orig} to ${new_fname}"
+      echo "       ...";
+      mv "${orig}" "${new_fname}" && echo "           ... success" || echo "           ... FAILURE";
+      echo
+    ' 2>&1 | tee outfile001.out
+```
+
+`  $` <kbd>grep -i --failure outfile001.out</kbd> ` | wc -l # n_failures?`
+
+<strong>`grep: unknown option -- failure`</strong>
+
+```bash
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Try 'grep --help' for more information.
+0
+```
+
+### My favorite error; basically, "Failure is not an option" X D
+
+Now, to get to what I should really check for
+
+(or "that for which I should really check.)
+
+` $` <kbd>grep -i failure outfile001.out</kbd> ` | wc -l # n_failures?`
+
+```bash
+0
+
+$ #  Great! No failures
+```
