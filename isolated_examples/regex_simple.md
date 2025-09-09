@@ -51,7 +51,7 @@ for the day.
 
 ## The regex part
 
-There were plans to have some [seriously color-coded commands and regexes&mdash;[example 1](https://github.com/bballdave025/portfolio-amz-agi/blob/main/isolated_examples/regex_deeper.md) & [example 2](https://github.com/bballdave025/fhtw-paper-code-prep/blob/main/dataset_preparation_examples/steps_rename_utrecht.md), but I decided becoming an expert in LaTeX typography wasn't my first priority.
+There were plans to have some [seriously color-coded commands and regexes&mdash;[example 1](https://github.com/bballdave025/portfolio-amz-agi/blob/main/isolated_examples/regex_deeper.md) & [example 2](https://github.com/bballdave025/fhtw-paper-code-prep/blob/main/dataset_preparation_examples/steps_rename_utrecht.md)&mdash;but I decided becoming an expert in LaTeX typography wasn't my first priority.
 
 Those commands which I especially want to highlight will be in <kbd>keyboard style</kbd> instead of <code>code style</code>. These include regex usage and general `bash` usage`
 
