@@ -50,7 +50,7 @@ ${{\color{BrickRed}\texttt{ \quad /dev/null }}}$
 
 Stuff from my other efforts:
 
-`$ find . -type f -iname "*.png" |` 
+`$ find . -type f -iname "*.png" | ` 
 ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 <kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p0}}}}$ <kbd>-</kbd> <kbd>"</kbd>
 ` | wc -l  #  Unique image files`
@@ -97,17 +97,43 @@ $ echo "1025+1025+274" | bc -l
 <br/>
 
 ```bash
-find . -type f -iname "*.png" |
-  xargs -I{} -0 bash -c '
-    orig={};
+$ find . -type f -iname "*.png" |
+    xargs -I{} -0 bash -c '
+      orig={};
 ```
-`      new_fname=$(echo "${orig}" |` ${{\color{Cerulean}\small{\texttt{ \quad awk \quad }}}}$ <kbd>-</kbd> ${{\color{Cerulean}\small{\texttt{ F \quad }}}}$ <kbd>'"'"'</kbd> <kbd>.</kbd> <kbd>'"'"'</kbd> ${{\color{Cerulean}\small{\texttt{ \quad \quad }}}}$ <kbd>'"'"'</kbd> <kbd>{</kbd> ${{\color{Cerulean}\small{\texttt{ print }}}}$ <kbd>$</kbd> ${{\color{Cerulean}\small{\texttt{ 1 \quad}}}}$ <kbd>"</kbd> <kbd>_</kbd> ${{\color{Cerulean}\small{\texttt{ 001 }}}}$ <kbd>"</kbd> ${{\color{Cerulean}\small{\texttt{ \quad}}}}$ <kbd>$</kbd> ${{\color{Cerulean}\small{\texttt{ 2 \quad}}}}$ <kbd>}</kbd> <kbd>'"'"'</kbd> `;`
+`        new_fname=$(echo "${orig}" |` ${{\color{Cerulean}\small{\texttt{ \quad awk \quad }}}}$ <kbd>-</kbd> ${{\color{Cerulean}\small{\texttt{ F \quad }}}}$ <kbd>'"'"'</kbd> <kbd>.</kbd> <kbd>'"'"'</kbd> ${{\color{Cerulean}\small{\texttt{ \quad \quad }}}}$ <kbd>'"'"'</kbd> <kbd>{</kbd> ${{\color{Cerulean}\small{\texttt{ print }}}}$ <kbd>$</kbd> ${{\color{Cerulean}\small{\texttt{ 1 \quad}}}}$ <kbd>"</kbd> <kbd>_</kbd> ${{\color{Cerulean}\small{\texttt{ 001 }}}}$ <kbd>"</kbd> ${{\color{Cerulean}\small{\texttt{ \quad}}}}$ <kbd>$</kbd> ${{\color{Cerulean}\small{\texttt{ 2 \quad}}}}$ <kbd>}</kbd> <kbd>'"'"'</kbd> `;`
 ```bash
-    echo "  Renaming ${orig} to ${new_fname}";
-    echo "       ...";
-    mv "${orig}" "${new_fname}" && echo "           ... success" || echo "           ... FAILURE";
-    echo
-  ' 2>&1 | tee outfile_$(date +'%s_%Y-%m-%dT%H%M%S%z').out
+      echo "  Renaming ${orig} to ${new_fname}";
+      echo "       ...";
+      mv "${orig}" "${new_fname}" && echo "           ... success" || echo "           ... FAILURE";
+      echo
+    ' 2>&1 | tee outfile001.out
 ```
 
-`$ ` 
+`$` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+<kbd>-</kbd> ${{\color{BrickRed}\texttt{i \quad}}}$
+<kbd>--</kbd> ${{\color{DarkOrange}\texttt{failure \quad}}}$
+${{\color{BrickRed}\small{\texttt{ outfile001.out }}}}$
+` | wc -l  # n_failures?`
+
+<strong>`  grep: unknown option -- failure`</strong>
+
+```bash
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Try 'grep --help' for more information.
+0
+```
+
+### My favorite error; basically, "Failure is not an option" X D
+
+Now, for what I should really check for
+
+`$` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+<kbd>-</kbd> ${{\color{BrickRed}\texttt{i \quad}}}$
+<kbd>"</kbd> ${{\color{DarkOrange}\texttt{failure}}}$ <kbd>"</kbd>
+${{\color{BrickRed}\small{\texttt{ outfile001.out }}}}$
+` | wc -l  # n_failures?`
+
+```bash
+0
+```
