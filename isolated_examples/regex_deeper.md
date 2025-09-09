@@ -41,18 +41,51 @@ ${{\color{BrickRed}\small{\texttt{ logfile.txt }}}}$
 <kbd>--</kbd> ${{\color{DarkOrange}\texttt{ \quad }}}$
 <kbd>'</kbd> ${{\color{DarkOrange}\small{\texttt{f}}}}$ <kbd>.*</kbd> <kbd>\\.</kbd> ${{\color{DarkOrange}\small{\texttt{c}}}}$ <kbd>$</kbd> <kbd>'</kbd>
 ${{\color{BrickRed}\texttt{ \*g\*.h \quad}}}$
-<kbd>&gt</kbd>
-${{\color{BrickRed}\texttt{ \*g\*.h \quad}}}$
-
-
-${{\color{BrickRed}\texttt{ \quad }}}$
-<kbd>'</kbd> 
-${{\color{DarkOrange}\small{\texttt{f}}}}$ 
-<kbd>.*\.</kbd>
-${{\color{DarkOrange}\small{\texttt{c}}}}$
-<kbd>'</kbd> 
-${{\color{BrickRed}\small{\texttt{ logfile.txt }}}}$ 
-` | wc -l`<br/>
-
+<kbd>&gt;</kbd>
+${{\color{BrickRed}\texttt{ \quad /dev/null }}}$
 
 <br/>
+
+Stuff from my other efforts:
+
+`$ find . -type f -iname "*.png" |` 
+${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
+<kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p0}}}}$ <kbd>-</kbd> <kbd>"</kbd>
+` | wc -l  #  Unique image files`
+
+`1025`<br/>
+
+`$ find . -type f -iname "*.png" |`
+${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+<kbd>-</kbd> ${{\color{BrickRed}\texttt{v \quad}}}$
+<kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p0}}}}$ <kbd>-</kbd> <kbd>"</kbd>
+` | wc -l  #  Number of duplicates`
+
+`2324`<br/>
+
+`$ #  We can double-check`<br/>
+`$ find . -type f -iname "*.png" |` 
+${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
+<kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p1}}}}$ <kbd>-</kbd> <kbd>"</kbd>
+` | wc -l  #  Duplicated the first time`
+
+`1025`<br/>
+
+`$ find . -type f -iname "*.png" |` 
+${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
+<kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p2}}}}$ <kbd>-</kbd> <kbd>"</kbd>
+` | wc -l  #  Duplicated the second time`
+
+`1025`<br/>
+
+`$ find . -type f -iname "*.png" |` 
+${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
+<kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p3}}}}$ <kbd>-</kbd> <kbd>"</kbd>
+` | wc -l  #  Duplicated the third time`
+
+`274`<br/>
+
+```bash
+$ echo "1025+1025+274" | bc -l
+2324
+```
