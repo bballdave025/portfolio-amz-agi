@@ -87,8 +87,15 @@ ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 
 `274`<br/>
 
+`  $ find . -type f -iname "*.png" |` 
+${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
+<kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p4}}}}$ <kbd>-</kbd> <kbd>"</kbd>
+` | wc -l  #  Should have 0 duplctd 4th time`
+
+`0`<br/>
+
 ```bash
-$ echo "1025+1025+274" | bc -l
+$ echo "1025+1025+274" | bc
 2324
 ```
 
