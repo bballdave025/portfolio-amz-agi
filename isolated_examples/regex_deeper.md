@@ -28,15 +28,15 @@ or a `SOME-COMMAND` `--help` output or as part of the usage returned from an err
 Often, they'll be slightly modified. Also, you might need to search `man awk`,
 `man gawk`, `man mawk`, or `awk --help`, `gawk --help`, `mawk --help` before you find the example
 
-`$  # Count the number of error messages in logfile.txt `<br/>
-`$` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+`  $` `  # Count the number of error messages in logfile.txt `<br/>
+`  $` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
 <kbd>-</kbd> ${{\color{BrickRed}\texttt{i \quad}}}$ 
 <kbd>'</kbd> ${{\color{DarkOrange}\small{\texttt{error}}}}$ <kbd>'</kbd> 
 ${{\color{BrickRed}\small{\texttt{ logfile.txt }}}}$ 
 ` | wc -l`<br/>
 
-`$  # Does something quite complicated; cf. man grep `<br/>
-`$` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+`  $` `  # Does something quite complicated; cf. man grep `<br/>
+`  $` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
 <kbd>-</kbd> ${{\color{BrickRed}\texttt{n \quad}}}$
 <kbd>--</kbd> ${{\color{DarkOrange}\texttt{ \quad }}}$
 <kbd>'</kbd> ${{\color{DarkOrange}\small{\texttt{f}}}}$ <kbd>.*</kbd> <kbd>\\.</kbd> ${{\color{DarkOrange}\small{\texttt{c}}}}$ <kbd>$</kbd> <kbd>'</kbd>
@@ -50,14 +50,14 @@ ${{\color{BrickRed}\texttt{ \quad /dev/null }}}$
 
 Stuff from my other efforts:
 
-`$ find . -type f -iname "*.png" | ` 
+`  $` `find . -type f -iname "*.png" | ` 
 ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 <kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p0}}}}$ <kbd>-</kbd> <kbd>"</kbd>
 ` | wc -l  #  Unique image files`
 
 `1025`<br/>
 
-`$ find . -type f -iname "*.png" |`
+`  $ find . -type f -iname "*.png" |`
 ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
 <kbd>-</kbd> ${{\color{BrickRed}\texttt{v \quad}}}$
 <kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p0}}}}$ <kbd>-</kbd> <kbd>"</kbd>
@@ -65,22 +65,22 @@ ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 
 `2324`<br/>
 
-`$ #  We can double-check`<br/>
-`$ find . -type f -iname "*.png" |` 
+`  $ #  We can double-check`<br/>
+`  $ find . -type f -iname "*.png" |` 
 ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 <kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p1}}}}$ <kbd>-</kbd> <kbd>"</kbd>
 ` | wc -l  #  Duplicated the first time`
 
 `1025`<br/>
 
-`$ find . -type f -iname "*.png" |` 
+`  $ find . -type f -iname "*.png" |` 
 ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 <kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p2}}}}$ <kbd>-</kbd> <kbd>"</kbd>
 ` | wc -l  #  Duplicated the second time`
 
 `1025`<br/>
 
-`$ find . -type f -iname "*.png" |` 
+`  $ find . -type f -iname "*.png" |` 
 ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$
 <kbd>"</kbd> <kbd>_</kbd> ${{\color{DarkOrange}\small{\texttt{p3}}}}$ <kbd>-</kbd> <kbd>"</kbd>
 ` | wc -l  #  Duplicated the third time`
@@ -110,7 +110,7 @@ $ find . -type f -iname "*.png" |
     ' 2>&1 | tee outfile001.out
 ```
 
-`$` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+`  $` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
 <kbd>-</kbd> ${{\color{BrickRed}\texttt{i \quad}}}$
 <kbd>--</kbd> ${{\color{DarkOrange}\texttt{failure \quad}}}$
 ${{\color{BrickRed}\small{\texttt{ outfile001.out }}}}$
@@ -128,7 +128,7 @@ Try 'grep --help' for more information.
 
 Now, for what I should really check for
 
-`$` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
+`  $` ${{\color{BrickRed}\texttt{ \quad grep \quad }}}$ 
 <kbd>-</kbd> ${{\color{BrickRed}\texttt{i \quad}}}$
 <kbd>"</kbd> ${{\color{DarkOrange}\texttt{failure}}}$ <kbd>"</kbd>
 ${{\color{BrickRed}\small{\texttt{ outfile001.out }}}}$
@@ -136,4 +136,6 @@ ${{\color{BrickRed}\small{\texttt{ outfile001.out }}}}$
 
 ```bash
 0
+
+$ #  Great! No failures
 ```
