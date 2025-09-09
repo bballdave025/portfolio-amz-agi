@@ -104,4 +104,23 @@ $ : >>'EOF'
   repeats (which fill memory if not stopped) are similar, but
   with  '_p1-', '_p2-', etc.
 EOF
+```
+
+`  $ find . -type f -iname "*.png" | ` <kbd>grep "_p0-"</kbd> ` | wc -l # Unique image files`<br/>
+`1025`<br/>
+`  $ find . -type f -iname "*.png" | ` <kbd>grep -v "_p0-"</kbd> ` | wc -l # Number of duplicates`<br/>
+`2324`<br/>
+`  $` `#  We can double check`<br/>
+`  $ find . -type f -iname "*.png" | ` <kbd>grep "_p1-"</kbd> ` | wc -l # Duplicated the first time`<br/>
+`1025`<br/>
+`  $ find . -type f -iname "*.png" | ` <kbd>grep "_p2-"</kbd> ` | wc -l # Duplicated the second time`<br/>
+`1025`<br/>
+`  $ find . -type f -iname "*.png" | ` <kbd>grep "_p3-"</kbd> ` | wc -l # Duplicated the third time`<br/>
+`274`<br/>
+`  $ find . -type f -iname "*.png" | ` <kbd>grep "_p4-"</kbd> ` | wc -l # Should have 0 duplctd 4th time`<br/>
+`0`<br/>
+`  $ ` `echo "1025+1025+274" | bc`
+`2324`
+
+<br/><hr/><br/>
 
