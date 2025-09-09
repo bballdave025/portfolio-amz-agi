@@ -4,6 +4,8 @@ figure out the basics, and pull in at least one example of: 1) Looking for non-A
 
 I'm just including the logfile/instructions for the day that I went through a lot of this stuff. This one is has input and output from the terminal.
 
+It comes from [here](https://github.com/bballdave025/fhtw-paper-code-prep/blob/main/dataset_preparation_examples/guide_example_for_ensuring_filename_characters_are_okay.log)
+
 ```bash
 bballdave025@MY-MACHINE /cygdrive/c/David/FHTW-2025-All_-_move_2024_get_new/Classified_-_Almost_Just_3lett_FS_-_Combined
 $
