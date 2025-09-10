@@ -1,6 +1,9 @@
 # portfolio-amz-agi
 Portfolio set up to go along with application for Amazon AI Content Expert II, Job ID 3045592. Made to showcase how my skills align with the job description.
 
+Want to see some of the images that go with some of the projects? Have a look at my [general portfolio](https://github.com/bballdave025/portfolio-resume),
+then come back to look at what's here!
+
 ## Ready for a Rebuild (Like those old, Under Construction, banners that used to be on some websites). ETA, 2025-09-10 at 08:00:00 MDT
 
 ## Regex + UNIX test tooling
