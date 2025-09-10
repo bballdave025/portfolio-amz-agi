@@ -245,7 +245,3 @@ find . -type f | awk -F'.' '{print $NF}' | sort |
 17
 '
 
-<strong>Counting instances of each file extension, making sure all files have an extension</strong>
-
-```
-
