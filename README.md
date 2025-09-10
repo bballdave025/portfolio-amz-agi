@@ -13,14 +13,15 @@ Ever wondered which elements can be spelled with the element symbols? Look at th
 
 ## LLM Familiarity
 
-Have a look at my work with RWKV and LoRA. RWKV is a RNN-based LLM that has shown promise in providing transormer-LLM-like results. Here, I go through an attempted proof of concept.
+Have a look at [my notes](https://github.com/bballdave025/portfolio-amz-agi/blob/main/isolated_examples/notes_on_incremental_CoT.md) about doing some incremental CoT prompting to build a Cyrillic-based chemical-element list with one-to-one mapping, cultural sensitivity, and a lot of fun.
 
-Also, look at my notes about doing some incremental CoT prompting to build a Cyrillic-based chemical-element list with one-to-one mapping, cultural sensitivity, and a lot of fun.
+Have a look at [my work](https://github.com/bballdave025/rwkv-lora) LoRA in anticipation of a proof-of-concept use with RWKV. RWKV is a RNN-based LLM that has shown promise in providing transormer-LLM-like results.
 
 ## JSON/CSV/Markdown/HTML/XML fluency
 
-Look at the [same file]() showcased in Regex + Unix. I had to get creative to get the colors working right. (For a previous attempt at color with a similar sequence of `bash` commands,
-have a look [here]()
+Look at the [same file](https://github.com/bballdave025/portfolio-amz-agi/blob/main/isolated_examples/regex_showcase.md) showcased in Regex + Unix. 
+I had to get creative to get the colors working right. (For a previous attempt at color with a similar sequence of `bash` commands,
+have a look [here](https://github.com/bballdave025/fhtw-paper-code-prep/blob/main/dataset_preparation_examples/steps_rename_utrecht.md).)
 
 <hr/>
 
@@ -28,15 +29,15 @@ have a look [here]()
 
 ## Reused Manuscript Fragments in Bindings
 
-See the `README` at the [repo root](), or check out the research, code, and presentation at the 2024 Family History Technology Workshop 2024 at the [repo]() for that study.
+See the `README` at the [repo root](https://github.com/bballdave025/fhtw-paper-code-prep), or check out the research, code, and presentation at the 2024 Family History Technology Workshop 2024 at the [repo](https://github.com/bballdave025/manuscript-waste-reuse-finder) for that study.
 
 ## English: Germanic or Romance
 
-Currently being worked in 30-second code session with Copilot
+Currently being worked out in a 30-minute coding session with Copilot.
 
 ## Mendeleev Spelling Bee
 
-See the `README` at the [directory root]. Feel free to try it out.
+See the `README` at the [directory root]. Feel free to try it out. The Russian version grew out of the original project ideas partnered with practicing CoT prompting ideas.
 
 ```bash
 git clone <ssh-or-html-path-from the green "Code" button> mendeleev-spelling bee.
@@ -49,7 +50,7 @@ cd mendeleev-spelling-bee
 #  I am working on a better build.
 pip install .
 #   Use `pip install -e .` if you want to play with the code
-mendeleevspellingbee -d
+mendeleevspellingbee -d russian.txt -s cyrillic
 ```
 
 Have a look through other repos while you're at it!
