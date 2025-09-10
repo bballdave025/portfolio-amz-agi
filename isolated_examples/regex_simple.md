@@ -164,3 +164,88 @@ Now, to get to what I should really check for
 
 $ #  Great! No failures
 ```
+
+### Some other favorite regexes (without colored/kbd annotation) in commands
+
+#### sed, simple and useful, and awk alternatives
+
+<strong>More-readable filename list</strong>
+
+```bash
+find . -type f -iname "*.png | sed 's:^[.]/::g;' | sort > rename_list.lst
+
+find . -type f -iname "*.png | awk -F'/' '{print $NF}' | sort > rename_list.lst
+```
+
+<strong>Isolating parts of file by line numbers</strong>
+
+```bash
+# best for shorter files
+sed -n '51,100p' file_with_250_entries.txt > second_of_five_fifties.txt 
+
+# best for longer files
+sed -n '4735, 5221p;5222q' thirty_one_k_line_bible.txt > favorite_chapter.txt
+
+# Okay with short or long files, example with long
+awk 'NR==51,NR==100' | file_with_250_entries.txt > second_of_five_fifties.txt
+```
+
+#### sed and grep together
+
+
+#### just sed
+
+
+
+#### tasks that come up often
+
+<strong>Removing blank lines</strong>
+
+```bash
+# without space
+sed '/^$/d' file_with_really_blank_lines.csv > without_byteless_lines.csv 
+tr -s '\n' < file_with_really_blank_lines.csv > without_byteless_lines.csv 
+awk 'NF' file_with_really_blank_lines.csv > without_byteless_lines.csv 
+grep -v "^.+$" file_with_really_blank_lines.csv > without_byteless_lines.csv 
+
+# with spaces (simple)
+sed '/^[[:space:]]*$/d' file_with_difft_types_blank_lines_lines.csv > no_whitespace_lines.csv
+awk 'NF' file_with_difft_types_blank_lines_lines.csv > no_whitespace_lines.csv
+grep -v '^[[:space:]]*$' file_with_difft_types_blank_lines_lines.csv > no_whitespace_lines.csv
+grep -Pv '^[ \t\r\n\v\r]*$' file_with_difft_types_blank_lines_lines.csv > no_whitespace_lines.csv
+
+
+# Okay with short or long files, example with long
+awk 's#^[.]/##g;' | sort > rename....sh
+```
+
+<strong>Counting instances of each file extension, making sure all files have an extension</strong>
+
+```bash
+# count num_files in directory
+num_files_1=$(find . -type f | wc -l)
+:' Example output
+17
+'
+
+# find number of files with each extension (from most to lest)
+find . -type f | awk -F'.' '{print $NF}' | sort | uniq -c | sort -rn
+:' Example output:
+   8 txt
+   3 md
+   3 png
+   2 py
+   1 sh
+'
+
+# Sum up the counts for each extension
+find . -type f | awk -F'.' '{print $NF}' | sort |
+  uniq -c | sort -rn | awk '{sum += $1}; END { print sum }' 
+:' Example output
+17
+'
+
+<strong>Counting instances of each file extension, making sure all files have an extension</strong>
+
+```
+
