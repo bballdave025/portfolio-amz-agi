@@ -40,7 +40,7 @@ Currently being worked out in a 30-minute coding session with Copilot.
 
 ## Mendeleev Spelling Bee
 
-See the `README` at the [directory root]. Feel free to try it out. The Russian version grew out of the original project ideas partnered with practicing CoT prompting ideas.
+See the `README` at the [directory root](https://github.com/bballdave025/mendeleev-spelling-bee). Feel free to try it out. The Russian version grew out of the original project ideas partnered with practicing CoT prompting ideas.
 
 ```bash
 git clone <ssh-or-html-path-from the green "Code" button> mendeleev-spelling bee.
